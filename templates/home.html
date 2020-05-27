@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+	{{ msg }}
+	<center>
+	<h1>Welcome!</h1></center>
+	<div class="login_form">
+		<label><b>Log In</b></label>
+		<form action="/student_login" method="POST">
+			<label>Username:</label><input type="text" name="uname"><br><br>
+			<label>Password:</label><input type="password" name="password"><br><br>
+			<button type="submit" class="btn-success"> Log In </button>
+			<button type="button" id="new_acc" class="btn-danger">Forgot Password</button>
+		</form>
+	</div>
+
+
+	<div id="sign_up">
+		<form action="/student_signup" method="POST" enctype="multipart/form-data">
+			<h2>Sign UP</h2>
+			<label>Please fill all the details:</label><br><br>
+			<input type="text" name="reg_no" placeholder="Registration Number" required><br><br>
+			<input type="text" name="name" placeholder="Full Name" required><br><br>
+			<input type="text" name="email" placeholder="College E-Mail address" required><br><br>
+			<input type="text" name="contact_no" placeholder="Contact Number" required><br><br>
+			<label>College:</label>
+			<select name="college" required>
+				<option value="VIT Chennai">VIT Chennai Campus</option>
+				<option value="VIT Vellore">VIT Vellore</option>
+				<option value="VIT Bhopal">VIT Bhopal</option>
+				<option value="VIT Amtavati">VIT Amravati</option>
+			</select><br><br>
+			<input type="password" name="pwd" placeholder="Enter a Password" required><br><br>
+			<input type="password" name="repwd" placeholder="Enter Password again" required><br><br>
+			<label>Please Upload 3 latest images saved with your reg no</label><br><br>
+			<label>Pic1:</label><input type="file" name="pic1" required><br><br>
+			<label>Pic2:</label><input type="file" name="pic2" required><br><br>
+			<label>Pic3:</label><input type="file" name="pic3" required><br><br>
+			<button type="submit" class="btn-success">Sign Up</button>
+		</form>
+	</div>
+{% endblock %}

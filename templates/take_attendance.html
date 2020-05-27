@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="attend_class">
+<h1>Mark Your Attendance Here</h1>
+<form action="/attendance">
+	<b><p>Note: To mark your attendance PRESS 'p' and to submit it please press 'q'.</p></b><br>
+	<button type="submit" class="btn-success">Mark Attendance</button>
+</form>
+
+<label>Attendance marked for:</label>{{ attndee }}
+</div>
+{% endblock %}

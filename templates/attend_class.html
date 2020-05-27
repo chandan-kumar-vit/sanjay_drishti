@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="attend_class">
+<h1>Welocome to Virtual Classroom</h1>
+
+	<label>Subject Code:</label>{{ course }}
+	<form action="/join_class" method="POST">
+		<label>Enter URL for class:</label><input type="text" name="class_link"><br><br>
+		<button type="submit" class="btn-success">Join Class</button>
+	</form>
+</div>
+{% endblock %}
