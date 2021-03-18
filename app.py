@@ -99,6 +99,7 @@ def student_login():
 			global results
 			results=cursor.fetchall()
 			print(results)
+			db.close()
 			if(pwd==results[0][5]):
 				session['username']=uname
 
@@ -111,9 +112,7 @@ def student_login():
 			flag=0
 			print("NO results found!")
 			print(e)
-
-		finally:
-			db.close()
+			
 	else:
 		return "Please Sign Up First"
 	return "PLEASE SIGN UP FIRST!!"
@@ -156,14 +155,15 @@ def student_signup():
 			db.commit()
 			msg="Your Account Created Successfully"
 			return render_template('home.html',msg=msg)
+			db.close()
 		else:
 			return "Problem in inserting data"
+			
 	
 	except Exception, e:
 		print str(e)
 
-	finally:
-		db.close()
+		
 
 	return "not done"
 
